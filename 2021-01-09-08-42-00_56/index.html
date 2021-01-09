@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>一篇关于AWS不同类型储存服务的文章 - MaJianyu&#39;s Blog</title><meta name="Description" content="MaJianyu&#39;s Blog -- My Blog"><meta property="og:title" content="一篇关于AWS不同类型储存服务的文章" />
+<meta property="og:description" content="原文请查看https://mp.weixin.qq.com/s/BLpMYaVpYc2QnjX7GY5M8w 天下武功，唯快不破！Infosy" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://immjy.eu.org/2021-01-09-08-42-00_56/" />
+<meta property="og:image" content="https://immjy.eu.org/logo.png"/>
+<meta property="article:published_time" content="2020-10-30T05:37:24+08:00" />
+<meta property="article:modified_time" content="2020-10-30T05:37:24+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://immjy.eu.org/logo.png"/>
+
+<meta name="twitter:title" content="一篇关于AWS不同类型储存服务的文章"/>
+<meta name="twitter:description" content="原文请查看https://mp.weixin.qq.com/s/BLpMYaVpYc2QnjX7GY5M8w 天下武功，唯快不破！Infosy"/>
+<meta name="application-name" content="MaJianyu&#39;s Blog">
+<meta name="apple-mobile-web-app-title" content="MaJianyu&#39;s Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://immjy.eu.org/2021-01-09-08-42-00_56/" /><link rel="prev" href="https://immjy.eu.org/2021-01-09-08-42-02_53/" /><link rel="next" href="https://immjy.eu.org/2021-01-09-08-42-00_62/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "一篇关于AWS不同类型储存服务的文章",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/immjy.eu.org\/2021-01-09-08-42-00_56\/"
+        },"image": ["https:\/\/immjy.eu.org\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "hostloc, collect","wordcount":  1486 ,
+        "url": "https:\/\/immjy.eu.org\/2021-01-09-08-42-00_56\/","datePublished": "2020-10-30T05:37:24+08:00","dateModified": "2020-10-30T05:37:24+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "majianyu","logo": "https:\/\/immjy.eu.org\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "majianyu"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="MaJianyu&#39;s Blog"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/logo.png"
+        data-srcset="/logo.png, /logo.png 1.5x, /logo.png 2x"
+        data-sizes="auto"
+        alt="/logo.png"
+        title="/logo.png" /></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/majianyu2007" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="MaJianyu&#39;s Blog"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/logo.png"
+        data-srcset="/logo.png, /logo.png 1.5x, /logo.png 2x"
+        data-sizes="auto"
+        alt="/logo.png"
+        title="/logo.png" /></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/majianyu2007" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">一篇关于AWS不同类型储存服务的文章</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://mjy.js.org/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>majianyu</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/hostloc/"><i class="far fa-folder fa-fw"></i>Hostloc</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-10-30">2020-10-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1486 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+            </div><div class="content" id="content"><p>原文请查看https://mp.weixin.qq.com/s/BLpMYaVpYc2QnjX7GY5M8w<br />
+<br />
+天下武功，唯快不破！Infosys 和 AWS 与 RPA 挑战正面交锋！<br />
+AWS云计算<br />
+<br />
+<br />
+研究权威机构预测，到 2021 年，全球 RPA 市场将达到 29 亿美元，而自动化可以将运营成本削减多达 90％。<br />
+<br />
+有了这些数字，RPA 在各个行业和业务部门中以前所未有的速度增长就不足为奇了。虽然相当多的组织和机构已经在各种业务功能中实施了 RPA-从**处理和库存管理到客户入职和客户支持。但是扩展 RPA 伴随着不同程度的挑战，例如：<br />
+<br />
+1、不断变化的业务需求<br />
+<br />
+2、建立，操作和维护 RPA 平台的高度复杂性<br />
+<br />
+3、高昂的基础架构成本，缺乏灵活的扩展或缩小规模<br />
+<br />
+4、耗时的基础架构流程会延迟 RPA 程序和平台可用性<br />
+<br />
+Infosys 和 Amazon Web Services (AWS)  强强联手，助力企业降低基础架构相关时间和成本，从资本支出模式转变为运营支出模式。<br />
+<br />
+<br />
+另外企业因在 AWS 云上进行部署，使扩展和交付更容易，能变得更加敏捷，迅速响应商机，还可以认知服务来自动化涉及视觉，语言或知识决策的流程，进而增强 RPA 的潜力，为企业提供了更大的价值。<br />
+<br />
+<br />
+<br />
+<br />
+通过云交付的 RPA  <br />
+<br />
+如何应对这些挑战？<br />
+<br />
+<br />
+<br />
+<br />
+专注于扩展自动化流程的企业由于其提供的速度和灵活性而逐渐转向基于云的服务。迁移到云也已成为企业数字化转型过程中的自然步骤。采用基于云的认知服务的企业已经通过将它们与 RPA 相结合而获得了可观的收益。<br />
+<br />
+<br />
+<br />
+AssistEdge Cloud RPA 介绍<br />
+<br />
+借助 AssistEdge Cloud RPA，企业现在可以利用领先的 RPA 产品以及通过服务供应商（例如 AWS）提供的 Cloud的灵活性。AssistEdge Cloud RPA 在整个业务领域和行业中部署了超过 50,000 个机器人，可通过无忧的快速流程自动化为您的业务提供更高的速度，可扩展性和安全性，从而为您的企业提供未来的证明。<br />
+<br />
+<br />
+<br />
+像 AWS 这样的领先服务供应商，AssistEdge Cloud RPA 的实现方法如下：<br />
+<br />
+<br />
+在 AWS 云上部署时：<br />
+<br />
+云端 BOTs 通过 扶墙 来连接需要操作的系统<br />
+<br />
+BOTs 部署在本地的机器上，适用于无法通过网络连接操作环境的情况<br />
+<br />
+整个系统对安全的设计也提供了全面的考虑。系统的安全管理主要如下图所示：<br />
+<br />
+<br />
+其特点是：<br />
+<br />
+支持 windows 身份验证并允许基于客户上下文编写自定义实现<br />
+<br />
+通过角色的授权和访问控制完全由客户配置<br />
+<br />
+企业在安装时和安装后拥有管理加密密钥的完全控制权<br />
+<br />
+在技术实现上如下图所示：<br />
+<br />
+<br />
+其特点是：<br />
+<br />
+加密密钥的位置可以扩展到 DB，平面文件, 以及其他开箱即用的方式, 对加密密钥的访问有密码控制<br />
+<br />
+数据 REST 支持 AES 256 加密 &amp; 数据传输支持 TLS1.2<br />
+<br />
+通过安全通信通道传输敏感数据<br />
+<br />
+分层架构以分离业务逻辑和表示逻辑<br />
+<br />
+在系统部署到 AWS 云上之后，可以利用 AWS 云提供的种类多样的安全组件来实现 RAP 系统的安全管理，极大提高云上系统的整体安全性。<br />
+<br />
+<br />
+<br />
+核心价值<br />
+<br /></p>
+<ol>
+<li>节省与基础架构供应相关的时间和成本<br />
+<br />
+通过 AWS 云供应商提供的 AssistEdge Cloud RPA 大大降低了组织成本，减少了对大规模 IT 基础架构进行投资的需求，并减少了建立 RPA 平台的复杂性和时间。企业可以从资本支出模式转变为运营支出模式。此外，它通过不断的产品升级提供渐进的自动化功能。<br />
+<br />
+<br />
+<br /></li>
+<li>易于扩展和交付<br />
+<br />
+人力资源，采购，财务和客户支持职能不再需要单独运行。AssistEdge Cloud RPA 可以通过 AWS 云供应商在整个企业中进行部署，从而使企业变得更加敏捷，并迅速响应商机。AssistEdge Cloud RPA 使其 RPA 平台可随时用于设计和推出自动化。它还使企业能够根据业务需求灵活地放大和缩小 AssistEdge 机器人和基础架构。<br />
+<br />
+<br />
+<br /></li>
+<li>利用认知服务使涉及决策的任务自动化<br />
+<br />
+AssistEdge Cloud RPA 可以根据规则和条件自动执行流程；企业可以利用 RPA 和认知服务来自动化涉及视觉，言语，语言或知识决策的流程。AWS 云服务供应商提供这些服务，从而增强了 RPA 的潜力，为企业提供了更大的价值。这些服务对于某些非常创新的用例的自动化非常有用。<img id="aimg_Q4t2o" onclick="zoom(this, this.src, 0, 0, 0)" class="zoom" src="https://cdn.jsdelivr.net/gh/hishis/forum-master/public/images/patch.gif" onmouseover="img_onmouseoverfunc(this)" onload="thumbImg(this)" border="0" alt="" /></li>
+</ol>
+<p>涨知识了！！！！<img src="static/image/smiley/default/shy.gif" smilieid="8" border="0" alt="" /></p>
+<p>纯忽悠，蹭aws</p>
+<p>涨知识</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-10-30</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/2021-01-09-08-42-00_56/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://immjy.eu.org/2021-01-09-08-42-00_56/" data-title="一篇关于AWS不同类型储存服务的文章" data-hashtags="hostloc,collect"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://immjy.eu.org/2021-01-09-08-42-00_56/" data-hashtag="hostloc"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://immjy.eu.org/2021-01-09-08-42-00_56/" data-title="一篇关于AWS不同类型储存服务的文章"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://immjy.eu.org/2021-01-09-08-42-00_56/" data-title="一篇关于AWS不同类型储存服务的文章"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://immjy.eu.org/2021-01-09-08-42-00_56/" data-title="一篇关于AWS不同类型储存服务的文章"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/hostloc/">hostloc</a>,&nbsp;<a href="/tags/collect/">collect</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2021-01-09-08-42-02_53/" class="prev" rel="prev" title="腾讯云双11：抽奖轻量/QQ公仔/优惠券 云服务器优惠力度不大"><i class="fas fa-angle-left fa-fw"></i>腾讯云双11：抽奖轻量/QQ公仔/优惠券 云服务器优惠力度不大</a>
+            <a href="/2021-01-09-08-42-00_62/" class="next" rel="next" title="移动宽带的光猫能不能自己换">移动宽带的光猫能不能自己换<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="gitalk" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://github.com/gitalk/gitalk"></a>Gitalk</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://mjy.js.org/" target="_blank">majianyu</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.6.2/dist/gitalk.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.fill%2CArray.prototype.find%2CArray.from%2CIntersectionObserver%2CMath.sign%2CObject.assign%2CPromise%2CObject.entries%2CElement.prototype.closest%2CrequestAnimationFrame%2CCustomEvent%2Chtml5shiv%2CObject.values%2Cfetch%2CElement.prototype.after"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/gitalk@1.6.2/dist/gitalk.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/twemoji@13.0.0/dist/twemoji.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript" src="https://v1.cnzz.com/z_stat.php?id=1279520654&amp;web_id=1279520654"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"gitalk":{"admin":["majianyu2007"],"clientID":"6902d886d4ba71055e97","clientSecret":"ce168e7294f639c51b20a412bdc857c4c11fc452","id":"2020-10-30T05:37:24+08:00","owner":"majianyu2007","repo":"immjy.eu.org","title":"一篇关于AWS不同类型储存服务的文章"}},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"algoliaAppID":"UKCXXMKXAR","algoliaIndex":"hostloc","algoliaSearchKey":"cf380377c386f5818a404d6e239d3f04","highlightTag":"em","maxResultLength":100,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

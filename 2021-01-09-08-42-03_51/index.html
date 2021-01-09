@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>关于SSL证书的奇怪问题 - MaJianyu&#39;s Blog</title><meta name="Description" content="MaJianyu&#39;s Blog -- My Blog"><meta property="og:title" content="关于SSL证书的奇怪问题" />
+<meta property="og:description" content="本帖最后由 19930618 于 2020-10-29 10:20 编辑 我今天vx公众号上访问：https://wxjj.scienmedia.com/。提示证书存在问题 然后我用ios自带的" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://immjy.eu.org/2021-01-09-08-42-03_51/" />
+<meta property="og:image" content="https://immjy.eu.org/logo.png"/>
+<meta property="article:published_time" content="2020-10-29T09:58:36+08:00" />
+<meta property="article:modified_time" content="2020-10-29T09:58:36+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://immjy.eu.org/logo.png"/>
+
+<meta name="twitter:title" content="关于SSL证书的奇怪问题"/>
+<meta name="twitter:description" content="本帖最后由 19930618 于 2020-10-29 10:20 编辑 我今天vx公众号上访问：https://wxjj.scienmedia.com/。提示证书存在问题 然后我用ios自带的"/>
+<meta name="application-name" content="MaJianyu&#39;s Blog">
+<meta name="apple-mobile-web-app-title" content="MaJianyu&#39;s Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://immjy.eu.org/2021-01-09-08-42-03_51/" /><link rel="prev" href="https://immjy.eu.org/2021-01-09-08-41-53_8/" /><link rel="next" href="https://immjy.eu.org/2021-01-09-08-41-56/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "关于SSL证书的奇怪问题",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/immjy.eu.org\/2021-01-09-08-42-03_51\/"
+        },"image": ["https:\/\/immjy.eu.org\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "hostloc, collect","wordcount":  1039 ,
+        "url": "https:\/\/immjy.eu.org\/2021-01-09-08-42-03_51\/","datePublished": "2020-10-29T09:58:36+08:00","dateModified": "2020-10-29T09:58:36+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "majianyu","logo": "https:\/\/immjy.eu.org\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "majianyu"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="MaJianyu&#39;s Blog"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/logo.png"
+        data-srcset="/logo.png, /logo.png 1.5x, /logo.png 2x"
+        data-sizes="auto"
+        alt="/logo.png"
+        title="/logo.png" /></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/majianyu2007" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="MaJianyu&#39;s Blog"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/logo.png"
+        data-srcset="/logo.png, /logo.png 1.5x, /logo.png 2x"
+        data-sizes="auto"
+        alt="/logo.png"
+        title="/logo.png" /></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/majianyu2007" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">关于SSL证书的奇怪问题</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://mjy.js.org/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>majianyu</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/hostloc/"><i class="far fa-folder fa-fw"></i>Hostloc</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-10-29">2020-10-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1039 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+            </div><div class="content" id="content"><p><i class="pstatus"> 本帖最后由 19930618 于 2020-10-29 10:20 编辑 </i><br />
+<br />
+我今天vx公众号上访问：https://wxjj.scienmedia.com/。提示证书存在问题<br />
+然后我用ios自带的safari和chrome上也是提示证书异常<br />
+可我在PC端的chrome上访问提示证书有效。<br />
+用myssl.com检测，提示证书被吊销<br />
+我就不信邪，把chrome更新到最新。。还是证书有效。。<br />
+后来我用IE。。发现连IE都报证书已被吊销。。<br />
+可我的PC端的chrome始终提示是有效的。。奇怪<br />
+<br />
+<br />
+<br />
+&mdash;&ndash;<br />
+10：19更新：发现chrome也提示证书无效了。。。chrome证书有效性检测反应慢半拍啊</p>
+<p><i class="pstatus"> 本帖最后由 h20 于 2020-10-29 10:31 编辑 </i><br />
+<br />
+垃圾chrome是不查ocsp的<br />
+<br /><div class="blockcode"><div id="code_pPX"><ol><li><br /><li>OCSP Request Data:<br /><li>    Version: 1 (0x0)<br /><li>    Requestor List:<br /><li>        Certificate ID:<br /><li>          Hash Algorithm: sha1<br /><li>          Issuer Name Hash: 978B4716E5B0F658BAE69DAB1689B8363AE3C3A6<br /><li>          Issuer Key Hash: 55744FB2724FF560BA50D1D7E6515C9A01871AD7<br /><li>          Serial Number: 074FDC8F3FB80B978E39A4AA24F411DC<br /><li>    Request Extensions:<br /><li>        OCSP Nonce:<br /><li>            0410DFBDF5A7DBEAD3829A8B53FB259E31B2<br /><li>OCSP Response Data:<br /><li>    OCSP Response Status: successful (0x0)<br /><li>    Response Type: Basic OCSP Response<br /><li>    Version: 1 (0x0)<br /><li>    Responder Id: 55744FB2724FF560BA50D1D7E6515C9A01871AD7<br /><li>    Produced At: Oct 28 15:44:59 2020 GMT<br /><li>    Responses:<br /><li>    Certificate ID:<br /><li>      Hash Algorithm: sha1<br /><li>      Issuer Name Hash: 978B4716E5B0F658BAE69DAB1689B8363AE3C3A6<br /><li>      Issuer Key Hash: 55744FB2724FF560BA50D1D7E6515C9A01871AD7<br /><li>      Serial Number: 074FDC8F3FB80B978E39A4AA24F411DC<br /><li>    Cert Status: revoked<br /><li>    Revocation Time: Oct 21 01:44:04 2020 GMT<br /><li>    This Update: Oct 28 15:44:59 2020 GMT<br /><li>    Next Update: Nov  4 14:59:59 2020 GMT<br /><li><br /><li>    Signature Algorithm: sha256WithRSAEncryption<br /><li>         70:e5:0a:f4:96:45:14:ee:bf:2f:4e:51:24:3a:a6:d8:db:17:<br /><li>         e3:96:e6:31:36:09:09:99:a7:16:fa:f5:46:ce:d9:f8:ea:c9:<br /><li>         70:df:f8:0e:ca:44:3f:03:be:2a:0f:59:a5:f1:dc:6e:af:b5:<br /><li>         69:bc:c7:cb:9e:0e:a7:24:02:a3:fe:20:17:2e:ec:80:85:fd:<br /><li>         a8:68:c7:68:33:02:12:51:d9:d5:c9:99:78:bc:60:7a:c7:f6:<br /><li>         41:c7:80:d2:3f:f1:4a:65:96:5b:40:64:eb:75:cf:15:91:64:<br /><li>         3e:78:4a:11:f6:9d:ef:68:c8:95:26:b7:8e:76:d8:62:36:15:<br /><li>         ce:f0:a3:22:91:5c:bd:91:a4:7b:7b:7e:bf:fa:5a:f3:78:40:<br /><li>         2c:81:a8:a4:17:c6:8f:11:dd:6b:3f:4a:4a:2f:85:84:7b:29:<br /><li>         b5:9d:f7:38:55:34:e3:f2:33:23:fc:14:c9:f9:07:5a:27:fc:<br /><li>         c1🆎f5:5d:9f:8a:a2:02:16💿5c:af:cd:f0:b6:27:97:a7:<br /><li>         4c:cc:cd:9d:95:54:db:aa:ae:05:c4:ae:a4:28:65:6a:31:ac:<br /><li>         32:49:d2:6a:56:a3:a7:10:b3:d2:84:fe:ac:9e:7a:8a:26:d7:<br /><li>         21:3e:02:09:a5:30:e8:0e:4f:90:a2:3d:3e:6f:7f:1d:f8:6c:<br /><li>         b5:e2:2b:d2<br /><li>WARNING: no nonce in response<br /><li>Response verify OK<br /><li>1.cer: revoked<br /><li>        This Update: Oct 28 15:44:59 2020 GMT<br /><li>        Next Update: Nov  4 14:59:59 2020 GMT<br /><li>        Revocation Time: Oct 21 01:44:04 2020 GMT<br /><li></ol></div><em onclick="copycode($('code_pPX'));">复制代码</em></div><br />
+<br />
+Cert Status: revoked<br />
+Revocation Time: Oct 21 01:44:04 2020 GMT</p>
+<p>这么奇怪，那推荐换个证书</p>
+<div class="quote"><blockquote><font size="2"><a href="https://www.hostloc.com/forum.php?mod=redirect&amp;goto=findpost&amp;pid=9367828&amp;ptid=759693" target="_blank"><font color="#999999">tir 发表于 2020-10-29 09:59</font></a></font><br />
+这么奇怪，那推荐换个证书</blockquote></div><br />
+主要不是我的网站。。是无锡交警。。我想上去查查违章
+<p>因为chrome不会去检查证书是否被吊销，只要还在有效期内，并且是信任的ca发布就默认承认有效，你遇到的就是这样</p>
+<div class="quote"><blockquote><font size="2"><a href="https://www.hostloc.com/forum.php?mod=redirect&amp;goto=findpost&amp;pid=9367872&amp;ptid=759693" target="_blank"><font color="#999999">By小酷 发表于 2020-10-29 10:09</font></a></font><br />
+因为chrome不会去检查证书是否被吊销，只要还在有效期内，并且是信任的ca发布就默认承认有效，你遇到的就是 ...</blockquote></div><br />
+那这样是不是不安全啊。假设我的私钥泄露了，我把这个证书吊销了。可chrome还是提示证书有效。。很大的安全隐患啊
+<div class="quote"><blockquote><font color="#999999">19930618 发表于 2020-10-29 10:12</font><br />
+<font color="#999999">那这样是不是不安全啊。假设我的私钥泄露了，我把这个证书吊销了。可chrome还是提示证书有效。。很大的安 ...</font></blockquote></div><br />
+chrome默认设置就是不去检查，说是为了速度，这个没办法，证书私钥丢失也要匹配域名，问题不大
+<p><i class="pstatus"> 本帖最后由 蓝瘦香菇 于 2020-10-29 10:19 编辑 </i><br />
+<br />
+用的哪的证书，应该是服务器端没设置好<img src="static/image/smiley/yct/007.gif" smilieid="46" border="0" alt="" /> <br />
+是不是缺少了ca证书</p>
+<div class="quote"><blockquote><font size="2"><a href="https://www.hostloc.com/forum.php?mod=redirect&amp;goto=findpost&amp;pid=9367898&amp;ptid=759693" target="_blank"><font color="#999999">By小酷 发表于 2020-10-29 10:14</font></a></font><br />
+chrome默认设置就是不去检查，说是为了速度，这个没办法，证书私钥丢失也要匹配域名，问题不大 ...</blockquote></div><br />
+私钥丢失+DNS污染<br />
+或者中间人攻击问题就大了
+<div class="quote"><blockquote><font size="2"><a href="https://www.hostloc.com/forum.php?mod=redirect&amp;goto=findpost&amp;pid=9367918&amp;ptid=759693" target="_blank"><font color="#999999">19930618 发表于 2020-10-29 10:16</font></a></font><br />
+私钥丢失+DNS污染<br />
+或者中间人攻击问题就大了</blockquote></div><br />
+<br />
+中间人攻击不会用合法证书(由CA签发)
+<div class="quote"><blockquote><font size="2"><a href="https://www.hostloc.com/forum.php?mod=redirect&amp;goto=findpost&amp;pid=9367928&amp;ptid=759693" target="_blank"><font color="#999999">iks 发表于 2020-10-29 10:18</font></a></font><br />
+中间人攻击不会用合法证书(由CA签发)</blockquote></div><br />
+刚chrome也提示证书无效了。。。</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-10-29</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/2021-01-09-08-42-03_51/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://immjy.eu.org/2021-01-09-08-42-03_51/" data-title="关于SSL证书的奇怪问题" data-hashtags="hostloc,collect"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://immjy.eu.org/2021-01-09-08-42-03_51/" data-hashtag="hostloc"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://immjy.eu.org/2021-01-09-08-42-03_51/" data-title="关于SSL证书的奇怪问题"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://immjy.eu.org/2021-01-09-08-42-03_51/" data-title="关于SSL证书的奇怪问题"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://immjy.eu.org/2021-01-09-08-42-03_51/" data-title="关于SSL证书的奇怪问题"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/hostloc/">hostloc</a>,&nbsp;<a href="/tags/collect/">collect</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2021-01-09-08-41-53_8/" class="prev" rel="prev" title="各位大佬请推荐一款2000以内的小学点读机"><i class="fas fa-angle-left fa-fw"></i>各位大佬请推荐一款2000以内的小学点读机</a>
+            <a href="/2021-01-09-08-41-56/" class="next" rel="next" title="现在的人都这么暴躁了嘛?关于字数补丁图片&amp;quot;被挂&amp;quot;回应">现在的人都这么暴躁了嘛?关于字数补丁图片&amp;quot;被挂&amp;quot;回应<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="gitalk" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://github.com/gitalk/gitalk"></a>Gitalk</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://mjy.js.org/" target="_blank">majianyu</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.6.2/dist/gitalk.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.fill%2CArray.prototype.find%2CArray.from%2CIntersectionObserver%2CMath.sign%2CObject.assign%2CPromise%2CObject.entries%2CElement.prototype.closest%2CrequestAnimationFrame%2CCustomEvent%2Chtml5shiv%2CObject.values%2Cfetch%2CElement.prototype.after"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/gitalk@1.6.2/dist/gitalk.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/twemoji@13.0.0/dist/twemoji.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript" src="https://v1.cnzz.com/z_stat.php?id=1279520654&amp;web_id=1279520654"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"gitalk":{"admin":["majianyu2007"],"clientID":"6902d886d4ba71055e97","clientSecret":"ce168e7294f639c51b20a412bdc857c4c11fc452","id":"2020-10-29T09:58:36+08:00","owner":"majianyu2007","repo":"immjy.eu.org","title":"关于SSL证书的奇怪问题"}},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"algoliaAppID":"UKCXXMKXAR","algoliaIndex":"hostloc","algoliaSearchKey":"cf380377c386f5818a404d6e239d3f04","highlightTag":"em","maxResultLength":100,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

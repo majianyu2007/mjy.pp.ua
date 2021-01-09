@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>LuManager网站服务器管理面板已开源，可用于商用 - MaJianyu&#39;s Blog</title><meta name="Description" content="MaJianyu&#39;s Blog -- My Blog"><meta property="og:title" content="LuManager网站服务器管理面板已开源，可用于商用" />
+<meta property="og:description" content="本帖最后由 zhoumo310 于 2020-10-26 11:24 编辑 LuManager估计HOC里很多人都没听过。LuManager是基于FreeBSD、Zijidelu、Debian、" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://immjy.eu.org/2021-01-09-08-41-32_45/" />
+<meta property="og:image" content="https://immjy.eu.org/logo.png"/>
+<meta property="article:published_time" content="2020-10-26T10:41:00+08:00" />
+<meta property="article:modified_time" content="2020-10-26T10:41:00+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://immjy.eu.org/logo.png"/>
+
+<meta name="twitter:title" content="LuManager网站服务器管理面板已开源，可用于商用"/>
+<meta name="twitter:description" content="本帖最后由 zhoumo310 于 2020-10-26 11:24 编辑 LuManager估计HOC里很多人都没听过。LuManager是基于FreeBSD、Zijidelu、Debian、"/>
+<meta name="application-name" content="MaJianyu&#39;s Blog">
+<meta name="apple-mobile-web-app-title" content="MaJianyu&#39;s Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://immjy.eu.org/2021-01-09-08-41-32_45/" /><link rel="prev" href="https://immjy.eu.org/2021-01-09-08-41-25_11/" /><link rel="next" href="https://immjy.eu.org/2021-01-09-08-41-26_16/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "LuManager网站服务器管理面板已开源，可用于商用",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/immjy.eu.org\/2021-01-09-08-41-32_45\/"
+        },"image": ["https:\/\/immjy.eu.org\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "hostloc, collect","wordcount":  3588 ,
+        "url": "https:\/\/immjy.eu.org\/2021-01-09-08-41-32_45\/","datePublished": "2020-10-26T10:41:00+08:00","dateModified": "2020-10-26T10:41:00+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "majianyu","logo": "https:\/\/immjy.eu.org\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "majianyu"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="MaJianyu&#39;s Blog"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/logo.png"
+        data-srcset="/logo.png, /logo.png 1.5x, /logo.png 2x"
+        data-sizes="auto"
+        alt="/logo.png"
+        title="/logo.png" /></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/majianyu2007" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="MaJianyu&#39;s Blog"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/logo.png"
+        data-srcset="/logo.png, /logo.png 1.5x, /logo.png 2x"
+        data-sizes="auto"
+        alt="/logo.png"
+        title="/logo.png" /></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/majianyu2007" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">LuManager网站服务器管理面板已开源，可用于商用</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://mjy.js.org/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>majianyu</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/hostloc/"><i class="far fa-folder fa-fw"></i>Hostloc</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-10-26">2020-10-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3588 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 8 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+            </div><div class="content" id="content"><p><i class="pstatus"> 本帖最后由 zhoumo310 于 2020-10-26 11:24 编辑 </i><br />
+<br />
+LuManager估计HOC里很多人都没听过。LuManager是基于FreeBSD、Zijidelu、Debian、Centos、Ubuntu等等的面板，国内好像仅此一个可以同时支持Linux和Unix。如果MJJ们有兴趣研究这个面板，或者有开发能力，可以对LuManager面板开发定制，开源免费（基于Apache2开源协议），可用于商用。<br />
+<br />
+<br />
+<font color="Red"><strong>下载地址：</strong><br />
+<a href="https://wws.lanzous.com/b01bt4vmj">https://wws.lanzous.com/b01bt4vmj</a><br />
+密码:dzh9<br />
+解压密码：urlos.com<br />
+</font><br />
+<br />
+LuManager的作者后面成立了公司并开发了全新的URLOS面板，不会开发的小白可以直接选择URLOS这个面板。<br />
+<br />
+现在URLOS双11促销，标准版终身授权也只要11.11元，活动看这里<br />
+<br />
+<strong><font color="Blue"><a href="https://www.hostloc.com/thread-758311-1-1.html">https://www.hostloc.com/thread-758311-1-1.html</a></font></strong><br />
+<br /></p>
+<p><br />
+<br />
+#&mdash;&mdash;&ndash; Nginx和Tengine自由切换<br />
+Tengine是由淘宝技术团队开发的Web服务器，Tengine基于Nginx，针对大流量网站需求增加了很多功能特性和性能优化（taobao.com就用它！）。<br />
+<br />
+#&mdash;&mdash;&ndash; Nginx(Tengine)与Apache自由切换<br />
+每个网站都可以自由选择以下三种模式：1.完全使用Nginx，2.完全使用Apache，3.仅PHP用Apache处理（即前台Nginx，后台Apache）。并且可以选择是否使用cgi处理PHP，杜绝502错误。<br />
+<br />
+#&mdash;&mdash;&ndash; 傻瓜化挂载硬盘<br />
+在LUM2.0出现之后，您只需要知道怎么插硬盘线就行了，别的事都交给LUM吧！阿里云，盛大云的数据库硬盘可以挂吗？哈哈，当然的，简直易如反掌，您不是在做梦！<br />
+<br />
+#&mdash;&mdash;&ndash; 智能优化<br />
+LUM可以根据硬件的性能智能优化系统，您只需打开智能优化开关即可，完全没有必要花大量的时间学习如何优化！还可以直接修改php,mysql的参数，如mysql连接数，php上传文件大小等。<br />
+<br />
+#&mdash;&mdash;&ndash; 增加了API接口<br />
+开发者可以开发主控端了！什么卖空间啦，FTP啦，都不在话下。不限制主控端的开发语言，理论上，只要能提交post数据，并**json数据的语言便可。<br />
+<br />
+#&mdash;&mdash;&ndash; 互相操控<br />
+如果您有1000台机装有LUM，要记账号，密码，还得不停切换&hellip;管理起来是不是特别麻烦？现在好了，只需要在其中一台LUM中录入其它999个节点的API接口密码（装有LUM的服务器，便可以称为节点），便可以管理其它机器了，可以往节点服务器上添加网站，重启，关机&hellip;跟管理本机一样操作，连界面都不变，只多出一个提示：您正在操控IP为****的节点服务器，爽得要死！<br />
+<br />
+#&mdash;&mdash;&ndash; 杜绝病毒与木马，安全有保障<br />
+LUM可以将网站“上锁”，就算网站程序有漏洞，也不会被挂木马或中病毒。至于跨站攻击，我们在很久很久以前就已经解决了&hellip;听说LUM还没有出现过漏洞？对头，相信我们，没错滴！<br />
+<br />
+#&mdash;&mdash;&ndash; 禁止访客IP<br />
+当发现某客户端IP的访客过多时，可以在LUM后台禁止访客IP<br />
+<br />
+#&mdash;&mdash;&ndash; 清理垃圾<br />
+相信没有几个人懂得Linux/Unix系统里所有文件的作用，而LUM可以将那些垃圾文件找出来！至于你信不信&hellip;哦，至于删除还是不删除，由你！<br />
+<br />
+#&mdash;&mdash;&ndash; 半小时内即可装好服务器环境<br />
+如果您使用的Reh系列操作系统（如CentOS，HttpOS等），一般30分钟即可装好服务器环境；如果选择编译安装，一般也不会超过2小时（与机器性能与下载速度有关，但我们还是强烈推荐用编译安装，因为安装过程中会根据硬件环境自动优化）。不管您选择哪一种方式，都可以自动化安装。<br />
+<br />
+#&mdash;&mdash;&ndash; 邮件告警<br />
+当系统发生故障时或进行一些重要的操作时，将发邮件给管理员告警。<br />
+<br />
+#&mdash;&mdash;&ndash; 服务器资源共享（LUM是非常优秀的虚拟主机控制面板）<br />
+LUM支持无限级代理，每个用户都可以创建子用户，并为子用户指定用户组，然后通过用户组控制子用户的权限，就像鸡生蛋，蛋再生鸡和寡蛋&hellip;LUM的权限控制可以精确到具体行为，例如可让某用户的网站跨目录访问，是否有重启Nginx的功能等。哦，对了，用户可以在LUM发邮件烦管理员哦！<br />
+<br />
+#&mdash;&mdash;&ndash; 网站压力测试<br />
+想试一下服务器的性能吗？想知道度娘的反应速度如何吗？<br />
+<br />
+#&mdash;&mdash;&ndash; 同时支持PHP5.2X和PHP5.3X<br />
+如果朋友们想使用PHP5.3X，选择Apache即可（选择Nginx就使用PHP5.2）<br />
+<br />
+#&mdash;&mdash;&ndash; 可以使用PostgreSQL数据库<br />
+兄弟姐妹们，如果MySQL宕掉了，LUM是不是就不能用了？以前是，以后，不一定了&hellip;只需在LUM后台点点鼠标即可切换成PostgreSQL，LUM的稳定性又一次大大增强<br />
+<br />
+#&mdash;&mdash;&ndash; CDN静态网站加速<br />
+提供静态内容加速功能，让不同地区或线路的用户访问不同的服务器，是下载或镜像网站的解决方案（创建一个镜像网站是几秒钟的事情）。最简单的应用：可以非常轻松实现让电信用户访问电信服务器，联通用户访问联通服务器，老外就访问放在国外的服务器&hellip;并且我们即将推出动态网站的加速软件，可以加速discuz,phpwind等动态网站的内容。<br />
+<br />
+#&mdash;&mdash;&ndash; 在线安装常用软件<br />
+可在线安装Discuz/Phpwind/EcShop/EcGroupon/Xweibo/iWeibo/PhpCMS/ECMS等程序，会上网就会建网站！<br />
+<br />
+#&mdash;&mdash;&ndash; 防止跨站攻击<br />
+不论使用的是Apache还是Nginx，都可以防跨站攻击，当服务上的一个网站出现安全问题并不会危及整台服务器上的数据。<br />
+<br />
+#&mdash;&mdash;&ndash; SSL证书支持<br />
+可以用LUM直接生成ssl证书和证书申请文件，生成后马上就可以用（测试站点），任何人都可以创建支持SSL证书的站点，不需再用命令去操作。<br />
+<br />
+#&mdash;&mdash;&ndash; 301和302转向<br />
+可以设置301永久转向和302临时转向。<br />
+<br />
+#&mdash;&mdash;&ndash; 网站流量限制<br />
+可以设置每个访客的最大线程和最大的浏览网页的速度。<br />
+<br />
+#&mdash;&mdash;&ndash; 同时支持Linux和Unix系统<br />
+目前已经支持的系统有FreeBSD（Unix系），Debian，Ubuntu系列（Linux mint, 深度Linux，YLMF Linux，KUbuntu等），Redhat系列（RHEL, CentOS等）&hellip;最重要的，LUM不会破坏系统的安全保护机制，请放心使用！<br />
+<br />
+#&mdash;&mdash;&ndash; 在线下载远程数据<br />
+填入远程文件的网址，轻轻一点便可以将远程文件下载，同时支持将整个FTP上的内容下载（搬站是件蛮好玩的事&hellip;）<br />
+<br />
+#&mdash;&mdash;&ndash; 强大的流量统计功能<br />
+能统计网站的最近5分钟，10分钟，半小时，3天，7天、10天、180天，本月，本年，昨天等时间段流量。自定义统计时间，支持日志回滚和自动切割，不需担心日志过大的问题。并且可以生成流量统计图表。还可以对单个网站进行流量统计，如果您感觉网站太难找，可以搜索并统计网站的流量。<br />
+<br />
+#&mdash;&mdash;&ndash; 支持套餐定制<br />
+可以对产品（FTP，虚拟主机，数据库）进行集中管理，如增加FTP的下载速度，限制FTP大小，控制FTP、网站、数据库的个数等，接下来还将开发支持限制资源使用的功能。<br />
+<br />
+#&mdash;&mdash;&ndash; FTP，主机，数据库分离<br />
+一个FTP下可以建N个网站，一个网站可以连接任意多个数据库，数据库和网站只相关不相连。一个用户可以有N个FTP，一个FTP下又可以有N个网站。<br />
+<br />
+#&mdash;&mdash;&ndash; 反向代理<br />
+只需填写被代理网址，别的都交给LUM去做，而且可以为代理网站开启静态缓存。<br />
+<br />
+#&mdash;&mdash;&ndash; 身份验证<br />
+可以为网站增加一个访问用户名和密码，只有通过验证的用户才能访问网站。<br />
+<br />
+#&mdash;&mdash;&ndash; 可选择常用软件的伪静态规则<br />
+包括Discuz、PhpWind、ShopEX、Wordpress等常用程序的伪静态规则。<br />
+<br />
+#&mdash;&mdash;&ndash; Memcached缓存管理<br />
+在线启动和关闭Memcached，并可设置所使用的内存大小，连接数，是否开机启动等。<br />
+<br />
+#&mdash;&mdash;&ndash; 防盗链<br />
+不仅可以设置允许链接的域名，还可以设置被盗链时的默认图片。<br />
+<br />
+#&mdash;&mdash;&ndash; 备份与还原<br />
+支持对网站，数据库或者普通文件夹直接打包备份或者解压还原，支持zip, tar.gz, bz2等压缩格式。<br />
+<br />
+#&mdash;&mdash;&ndash; 操作系统行为控制<br />
+支持在后台直接重启，关机，Nginx，Apache，MySQL，Pure-ftpd等软件的重启，重载，关闭等功能。<br />
+<br />
+#&mdash;&mdash;&ndash; 操作FTP和网站的文件权限互通系统<br />
+开通网站后，能过FTP上传程序即可使用，不需改文件权限。通过FTP上传的文件在网站程序中可以编辑或删除，网站生成的文件在FTP中也能编辑或删除。而且可在编辑虚拟主机时一次性将网站所有文件更改成777、775、644等权限。<br />
+<br />
+#&mdash;&mdash;&ndash; 错误页控制<br />
+支持在后台控制403、404、500、501、502错误页<br />
+<br />
+#&mdash;&mdash;&ndash; FTP和网站目录自由定制<br />
+可以将FTP定在/home/以外的分区，支持多个FTP主目录（即可以挂多个硬盘），如/home/ftp2，/home/ftp3。<br />
+<br />
+从LUM1.1.9至2.0有100多项更新，在此不再赘述。<br /></p>
+<p><img src="static/image/smiley/default/lol.gif" smilieid="12" border="0" alt="" /> 这AD有点硬</p>
+<p>好多年前lnmp我玩不转就用的撸妹儿</p>
+<p>因为你的头像，你的帖子我都不敢在办公室点开<img src="static/image/smiley/default/lol.gif" smilieid="12" border="0" alt="" /></p>
+<div class="quote"><blockquote><font size="2"><a href="https://www.hostloc.com/forum.php?mod=redirect&amp;goto=findpost&amp;pid=9352923&amp;ptid=758493" target="_blank"><font color="#999999">boq 发表于 2020-10-26 10:44</font></a></font><br />
+因为你的头像，你的帖子我都不敢在办公室点开</blockquote></div><br />
+<p>&lt;ignore_js_op&gt;</p>
+<p><img id="aimg_140747" aid="140747" src="static/image/common/none.gif" zoomfile="forum.php?mod=attachment&aid=MTQwNzQ3fDg4MWRhN2NifDE2MDk2MjE3MDF8NDczNDR8NzU4NDkz&noupdate=yes&nothumb=yes" file="forum.php?mod=attachment&aid=MTQwNzQ3fDg4MWRhN2NifDE2MDk2MjE3MDF8NDczNDR8NzU4NDkz&noupdate=yes" class="zoom" onclick="zoom(this, this.src, 0, 0, 0)" width="200" id="aimg_140747" inpost="1" onmouseover="showMenu({'ctrlid':this.id,'pos':'12'})" /></p>
+<div class="tip tip_4 aimg_tip" id="aimg_140747_menu" style="position: absolute; display: none" disautofocus="true">
+<div class="xs0">
+<p><strong>71_avatar_big.jpg</strong> <em class="xg1">(9.36 KB, 下载次数: 0)</em></p>
+<p>
+<a href="forum.php?mod=attachment&amp;aid=MTQwNzQ3fDg4MWRhN2NifDE2MDk2MjE3MDF8NDczNDR8NzU4NDkz&amp;nothumb=yes" target="_blank">下载附件</a>
+</p>
+<p class="xg1 y">2020-10-26 10:50 上传</p>
+</div>
+<div class="tip_horn"></div>
+</div>
+<p>&lt;/ignore_js_op&gt;
+<br />
+<br />
+这样会不会好些<img src="static/image/smiley/default/lol.gif" smilieid="12" border="0" alt="" /></p>
+<div class="quote"><blockquote><font size="2"><a href="https://www.hostloc.com/forum.php?mod=redirect&amp;goto=findpost&amp;pid=9352902&amp;ptid=758493" target="_blank"><font color="#999999">_____________Cc 发表于 2020-10-26 10:41</font></a></font><br />
+好多年前lnmp我玩不转就用的撸妹儿</blockquote></div><br />
+我用的第一个面板就是这个，后来转用wdcp，用了好几年，然后用amh
+<p>换名字啦</p>
+<p>楼主解压密码多少？</p>
+<p>头像好牛</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-10-26</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/2021-01-09-08-41-32_45/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://immjy.eu.org/2021-01-09-08-41-32_45/" data-title="LuManager网站服务器管理面板已开源，可用于商用" data-hashtags="hostloc,collect"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://immjy.eu.org/2021-01-09-08-41-32_45/" data-hashtag="hostloc"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://immjy.eu.org/2021-01-09-08-41-32_45/" data-title="LuManager网站服务器管理面板已开源，可用于商用"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://immjy.eu.org/2021-01-09-08-41-32_45/" data-title="LuManager网站服务器管理面板已开源，可用于商用"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://immjy.eu.org/2021-01-09-08-41-32_45/" data-title="LuManager网站服务器管理面板已开源，可用于商用"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/hostloc/">hostloc</a>,&nbsp;<a href="/tags/collect/">collect</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2021-01-09-08-41-25_11/" class="prev" rel="prev" title="手机天天接到买房买铺买黄金炒股期货石油贷款的电话"><i class="fas fa-angle-left fa-fw"></i>手机天天接到买房买铺买黄金炒股期货石油贷款的电话</a>
+            <a href="/2021-01-09-08-41-26_16/" class="next" rel="next" title="建议ceranetworks出些低配的毒妇，降低进入门槛">建议ceranetworks出些低配的毒妇，降低进入门槛<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="gitalk" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://github.com/gitalk/gitalk"></a>Gitalk</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://mjy.js.org/" target="_blank">majianyu</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.6.2/dist/gitalk.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.fill%2CArray.prototype.find%2CArray.from%2CIntersectionObserver%2CMath.sign%2CObject.assign%2CPromise%2CObject.entries%2CElement.prototype.closest%2CrequestAnimationFrame%2CCustomEvent%2Chtml5shiv%2CObject.values%2Cfetch%2CElement.prototype.after"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/gitalk@1.6.2/dist/gitalk.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/twemoji@13.0.0/dist/twemoji.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript" src="https://v1.cnzz.com/z_stat.php?id=1279520654&amp;web_id=1279520654"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"gitalk":{"admin":["majianyu2007"],"clientID":"6902d886d4ba71055e97","clientSecret":"ce168e7294f639c51b20a412bdc857c4c11fc452","id":"2020-10-26T10:41:00+08:00","owner":"majianyu2007","repo":"immjy.eu.org","title":"LuManager网站服务器管理面板已开源，可用于商用"}},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"algoliaAppID":"UKCXXMKXAR","algoliaIndex":"hostloc","algoliaSearchKey":"cf380377c386f5818a404d6e239d3f04","highlightTag":"em","maxResultLength":100,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

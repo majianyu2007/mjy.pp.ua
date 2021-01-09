@@ -1,0 +1,64 @@
+# 白女票--博物馆
+
+
+1、百度百科博物馆计划，目前上线299家博物馆：https://baike.baidu.com/museum/<br />
+<br />
+2、故宫博物院数字多宝阁：https://www.dpm.org.cn/shuziduobaoge/html.html<br />
+<br />
+3、故宫博物院数字文物库：https://digicol.dpm.org.cn/<br />
+<br />
+4、故宫博物院历年展览与陈列：https://www.dpm.org.cn/classify/exhibition.html<br />
+<br />
+5、全景故宫（之前介绍过）：http://webapp.vizen.cn/gugong_app_pc/index.html<br />
+<br />
+6、国家博物馆数字展厅：http://www.chnmuseum.cn/Portals/0/web/vr/<br />
+<br />
+7、上海博物馆三维展厅：https://www.shanghaimuseum.net/museum/frontend/infomation/infomation3d.action?infomation3dTypeCode=INFOMATION_3D_TYPE_1<br />
+<br />
+8、上海博物馆三维藏品：https://www.shanghaimuseum.net/museum/frontend/infomation/infomation3d.action?infomation3dTypeCode=INFOMATION_3D_TYPE_2<br />
+<br />
+9、数字莫高窟：https://www.e-dunhuang.com/<br />
+<br />
+10、青铜的对话——黄河与长江流域青铜文明展：http://quanjing.artron.net/scene/VqhnRLCStCtUV9KcaSCJ1nhh8aWiOhFN/sanxingdui/tour.html<br />
+<br />
+11、人与神——古代南方丝绸之路文物精华展：http://quanjing.artron.net/scene/Q1dr4s1ZAJTfRWzA4xpRt4ZVhxOkVaQ4/rys/tour.html<br />
+<br />
+12、和乐天下——中原古代音乐文物瑰宝展：http://quanjing.artron.net/scene/A27IfYyK19kCoOlnEWrB784s7cYu63sl/hltx/tour.html<br />
+<br />
+13、发现三星堆：三星堆与巴蜀考古展”：http://quanjing.artron.net/scene/3PI8cyI6kXE18EXHXWK76JgBwPitFrBJ/sxd/tour.html<br />
+<br />
+14、浙江博物馆数字浙博：http://www.zhejiangmuseum.com/zjbwg/exhibition/digital_zpm.html<br />
+<br />
+15成都市博物馆陈列展览：http://www.cdmuseum.com/qjzs.html<br />
+<br />
+16山西博物院http://www.shanximuseum.com/inter.html<br />
+<br />
+17陕西历史博物馆数字展厅：http://www.sxhm.com/index.php?ac=article&amp;at=list&amp;tid=199<br />
+<br />
+18.河北博物馆http://www.hebeimuseum.org.cn/contents/154/2154.html<br />
+<br />
+19.天津博物馆耀世奇珍：http://quanjing.artron.net/scene/WgeD49uvrhpavCuMuk3JDggpPKrfrbFG/yaoshiqizhen/tour.html<br />
+<br />
+20、青蓝雅静—馆藏青花瓷器陈列：http://quanjing.artron.net/scene/diaFpCLxYbs9VR6tl4OCgYBeLJkSAXyT/qinghuaci/tour.html<br />
+<br />
+21、聚赏珍玉—馆藏古代玉器陈列：http://quanjing.artron.net/scene/s9j9rdk4JsL5EkIbUNY2z2W3zKWEYxBd/jushangzhenyu/tour.html<br />
+<br />
+22、镜影—馆藏古代铜镜展：http://quanjing.artron.net/scene/gqoI4MYeyPnITbXdpkC77vDSgSx4wn4l/jingying/tour.html/<br />
+<br />
+23、清代中期绘画特展：http://quanjing.artron.net/scene/t9oca3wP67QzYzcyQ1jWINqkUZBks9g2/qingdaizhongqi/tour.html<br />
+<br />
+24、动·境——中华古代体育文物展：http://www.tjbwg.com/tiyuzhan/tour.html<br />
+<br />
+25、御苑藏珍——颐和园精品文物展：http://quanjing.artron.net/scene/upxKuD8aUFpyFyUFqFL5iHIGsstWxxEA/Yiheyuan/tour.html<br />
+<br />
+26、清代中期绘画特展：http://quanjing.artron.net/scene/t9oca3wP67QzYzcyQ1jWINqkUZBks9g2/qingdaizhongqi/tour.html<br />
+<br />
+27、苏州博物馆http://www.szmuseum.com/0pano/DigitalMus/HDView.html<br />
+<br />
+28、湖南省博物馆http://www.hnmuseum.com/zh-hans/content/%E7%BD%91%E4%B8%8A%E5%B1%95%E5%8E%85<br />
+<br />
+29、武汉自然博物馆https://720yun.com/t/498juztu5n1?from=groupmessage<br />
+<br />
+30.中国美术馆http://www.namoc.org/zsjs/zxzl/
+
+多谢分享，不过我没兴趣啊

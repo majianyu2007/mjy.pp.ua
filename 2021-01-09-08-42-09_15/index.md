@@ -1,0 +1,4 @@
+# rclone如何魔改支持世纪互联Sharepoint
+
+
+在论坛里看到有大佬魔改rclone，支持挂载世纪互联onedrive的Sharepoint，我只找另个大佬要到了一个linux版本rlcone，我还需要其他版本，想自己编译下，请问哪位大佬知道如何修改吗？我找到了修改rclone支持世纪互联的onedrive的代码，但没有找到支持sharepoint的代码
